@@ -16,3 +16,4 @@ export class Comparador {
         else if ( num > 300000){return 47}
     }
 }
+
