@@ -1,14 +1,19 @@
 import * as readline from 'readline';
 
     export class AskQuestions {
-            rl = readline.createInterface({
-            input: process.stdin,
-            output: process.stdout
+    
+    question1 : string = ('Introduzca su base imponible: ') 
+    question2 : string = ('Introduzca su plan de pensiones de persona física: ') 
+    question3 : string = ('Introduzca su plan de pensiones de empresa: ') 
+    question4 : string = ('Introduzca su plan de pensiones de autónomo: ') 
+
+    question(question: string,rl : readline.Interface): Promise<string> {
+        return new Promise((resolve) => {
+            rl.question(question, (input) => resolve(input));
         });
+    }
+ 
+}
 
-        question(question:string): Promise<string>{
-            return new Promise((resolve)=>{
-                this.rl.question(question,(input)=> resolve(input))
-        })
 
-    }}
+    
